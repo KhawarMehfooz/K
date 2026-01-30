@@ -1,3 +1,5 @@
+@import 'components/_header.less';
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -240,3 +242,12 @@ body{
     .section_padding{padding:60px 0px;}
 }
 
+@media (min-width: 768px), print {
+  .block-search {
+    padding-left: 0 !important ;
+  }
+}
+
+input:not(:disabled):focus{
+  box-shadow: none !important;
+}

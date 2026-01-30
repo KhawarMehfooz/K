@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <!-- Remove default header -->
+        <referenceContainer name="header.container" remove="true" />
+
+        <!-- Custom header -->
+        <referenceContainer name="page.wrapper">
+            <container name="custom.header.container" before="-">
+                <block class="Magento\Framework\View\Element\Template"
+                    name="custom.header"
+                    template="Magento_Theme::html/custom_header.phtml">
+
+                    <!-- LOGO -->
+                    <block class="Magento\Theme\Block\Html\Header\Logo"
+                        name="logo"
+                        as="logo" />
+
+                    <!-- CALL CTA -->
+                    <block class="Magento\Framework\View\Element\Template"
+                        name="call.cta"
+                        as="call.cta"
+                        template="Magento_Theme::header/call_cta.phtml" />
+
+                    <!-- SEARCH -->
+                    <block class="Magento\Search\Block\Term"
+                        name="top.search"
+                        as="top.search"
+                        template="Magento_Search::form.mini.phtml">
+                        <arguments>
+                            <argument name="configProvider" xsi:type="object">
+                                Magento\Search\ViewModel\ConfigProvider
+                            </argument>
+                            <argument name="additionalSearchFormData" xsi:type="object">
+                                Magento\Search\ViewModel\AdditionalSearchFormData
+                            </argument>
+                        </arguments>
+                    </block>
+
+                    <!-- CART -->
+                    <block class="Magento\Checkout\Block\Cart\Sidebar" name="minicart" as="minicart"
+                        template="Magento_Checkout::cart/minicart.phtml">
+                        <arguments>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="minicart_content" xsi:type="array">
+                                        <item name="component" xsi:type="string">
+                                            Magento_Checkout/js/view/minicart
+                                        </item>
+                                    </item>
+
+                                </item>
+
+                            </argument>
+                        </arguments>
+                    </block>
+
+                    <!-- RIGHT NAV -->
+                    <block class="Magento\Framework\View\Element\Template"
+                        name="right.nav"
+                        as="right.nav"
+                        template="Magento_Theme::header/right_nav.phtml" />
+
+                    <!-- LEFT NAV -->
+                    <block class="Magento\Framework\View\Element\Template"
+                        name="left.nav"
+                        as="left.nav"
+                        template="Magento_Theme::header/left_nav.phtml" />
+
+
+                </block>
+            </container>
+        </referenceContainer>
+
+        <!-- Custom logo -->
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">
+                    images/Tehzeeb-Logo-PNG1.png
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+    </body>
+</page>

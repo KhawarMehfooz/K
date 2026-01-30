@@ -1,0 +1,68 @@
+<header class="page-header">
+    <div class="bg_header">
+
+        <!-- TOP DELIVERY BAR -->
+        <div class="delivery_txt">
+            <p>
+                <span>Delivering Nationwide. Place your order Online or Call UAN</span>
+                <a href="tel:+12345877854">+123 4587 7854</a>
+            </p>
+        </div>
+
+        <!-- HEADER CONTAINER -->
+        <div class="header_container">
+            <div class="nav-section">
+
+                <!-- LEFT -->
+                <div class="nav-section-left">
+                    <?= $block->getChildHtml('left.nav') ?>
+                </div>
+
+                <!-- LOGO -->
+                <div class="nav-section-logo">
+                    <?= $block->getChildHtml('logo') ?>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="nav-section-right">
+
+                    <div class="nav-section-ctas">
+                        <!-- CALL CTA -->
+                         <?= $block->getChildHtml('call.cta') ?>
+
+                        <!-- SEARCH -->
+                        <div class="search_field">
+                            <?= $block->getChildHtml('top.search') ?>
+                        </div>
+
+                        <!-- ACCOUNT (custom) -->
+                        <div class="profile">
+                            <a href="<?= $block->getUrl('customer/account') ?>">
+                                <img src="<?= $block->getViewFileUrl('images/account.png') ?>" alt="account">
+                            </a>
+                        </div>
+
+                        <!-- CART -->
+                        <div class="cart">
+                            <?= $block->getChildHtml('minicart') ?>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT NAV -->
+                    <div class="navigation">
+                        <?= $block->getChildHtml('right.nav') ?>
+                    </div>
+
+                </div>
+
+                <!-- MOBILE DROPDOWN -->
+                <div class="mobile_dropdown">
+                    <!-- mobile select -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</header>
