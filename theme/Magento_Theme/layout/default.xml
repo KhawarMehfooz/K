@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">Magento_Theme::images/Usol-Logo.png</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+
+        <referenceBlock name="footer-container">
+            <block class="Magento\Cms\Block\Block"
+                name="footer.block.cms"
+                before="footer_links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-block</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        
+    </body>
+</page>
