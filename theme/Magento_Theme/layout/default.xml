@@ -2,8 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-
-        <referenceBlock name="header.panel">
+        <referenceContainer name="header.panel">
             <block class="Magento\Cms\Block\Block" name="header.top.cms">
                 <arguments>
                     <argument name="block_id" xsi:type="string">header-top</argument>
@@ -11,20 +10,32 @@
             </block>
 
             <referenceBlock name="header.links" remove="true" />
-        </referenceBlock>
+        </referenceContainer>
 
-        <referenceBlock name="footer_links" remove="true" />
-        <referenceBlock name="form.subscribe" remove="true" />
-
-        <referenceBlock name="footer-container">
-            <block class="Magento\Cms\Block\Block"
-                name="footer.block.cms"
-                before="footer_links">
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Cms\Block\Block" name="header.nav.left" before="logo">
                 <arguments>
-                    <argument name="block_id" xsi:type="string">footer-block</argument>
+                    <argument name="block_id" xsi:type="string">header-nav-left</argument>
                 </arguments>
             </block>
-        </referenceBlock>
+
+            <referenceBlock name="top.search" remove="true" />
+            <referenceBlock name="minicart" remove="true" />
+
+            <block class="Magento\Cms\Block\Block" name="header.nav.right" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-nav-right</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
 
     </body>
 </page>
+
+
+
+                                    
+                                
+                                        
+             
