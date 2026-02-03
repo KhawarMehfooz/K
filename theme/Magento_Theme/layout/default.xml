@@ -2,10 +2,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="logo">
-            <arguments>
-                <argument name="logo_file" xsi:type="string">Magento_Theme::images/Usol-Logo.png</argument>
-            </arguments>
+
+        <referenceBlock name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="header.top.cms">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-top</argument>
+                </arguments>
+            </block>
+
+            <referenceBlock name="header.links" remove="true" />
         </referenceBlock>
 
         <referenceBlock name="footer_links" remove="true" />
