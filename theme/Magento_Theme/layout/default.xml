@@ -29,7 +29,18 @@
             </block>
         </referenceContainer>
 
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
 
+        <referenceBlock name="footer-container">
+            <block class="Magento\Cms\Block\Block"
+                name="footer.block.cms"
+                before="footer_links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-block</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
 
