@@ -22,14 +22,10 @@
             <referenceBlock name="top.search" remove="true" />
             <referenceBlock name="minicart" remove="true" />
             <referenceBlock name="store.menu" remove="true" />
-            <referenceBlock name="logo">
-                <arguments>
-                    <argument name="show_nav_toggle" xsi:type="boolean">false</argument>
-                </arguments>
-            </referenceBlock>
 
 
             <referenceBlock name="catalog.compare.link" remove="true"/>
+            <referenceBlock name="copyright" remove="true"/>
 
             <block class="Magento\Cms\Block\Block" name="header.nav.right" after="logo">
                 <arguments>
