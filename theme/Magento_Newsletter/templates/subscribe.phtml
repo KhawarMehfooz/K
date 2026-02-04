@@ -1,0 +1,20 @@
+<?php /** @var $block \Magento\Newsletter\Block\Subscribe */ ?>
+
+
+<div class="title_block">
+    <h2>Enter the world of Tehzeeb</h2>
+    <p>News, Bakery Creation &amp; Latest events in stores.</p>
+</div>
+
+<form class="email_field" action="<?= $block->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+
+    <div class="input_field">
+        <input type="email" name="email" id="newsletter" placeholder="Enter your email address"
+            data-validate="{required:true, 'validate-email':true}" />
+    </div>
+
+    <button type="submit" class="footer_Cta primary_cta">
+        Subscribe
+    </button>
+
+</form>

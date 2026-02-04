@@ -1,0 +1,11 @@
+<h2 class="footer_title">Categories</h2>
+
+<ul class="footer_list">
+    <?php foreach ($block->getMenu() as $category): ?>
+        <li>
+            <a href="<?= $category->getUrl() ?>" class="footer_link">
+                <?= $category->getName() ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
