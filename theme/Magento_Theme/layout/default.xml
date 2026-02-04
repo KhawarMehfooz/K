@@ -8,30 +8,69 @@
                     <argument name="block_id" xsi:type="string">header-top</argument>
                 </arguments>
             </block>
-
             <referenceBlock name="header.links" remove="true" />
         </referenceContainer>
 
+
         <referenceContainer name="header-wrapper">
-            <block class="Magento\Cms\Block\Block" name="header.nav.left" before="logo">
+
+            <!-- LEFT SECTION -->
+            <container name="nav-section-left"
+                htmlTag="div"
+                htmlClass="nav-section-left"
+                before="logo" />
+
+            <!-- RIGHT SECTION -->
+            <container name="nav-section-right"
+                htmlTag="div"
+                htmlClass="nav-section-right"
+                after="logo" />
+
+        </referenceContainer>
+
+        <referenceContainer name="nav-section-left">
+
+            <!-- Hamburger + dropdown as CMS so editable -->
+            <block class="Magento\Cms\Block\Block" name="header.left.cms">
                 <arguments>
-                    <argument name="block_id" xsi:type="string">header-nav-left</argument>
+                    <argument name="block_id" xsi:type="string">header-left</argument>
                 </arguments>
             </block>
+
+            <block class="Magento\Theme\Block\Html\Topmenu"
+                name="store.menu.custom"
+                template="Magento_Theme::html/topmenu.phtml" />
+
+        </referenceContainer>
+
+        <referenceContainer name="nav-section-right">
+
+            <!-- CTA + search + icons -->
+            <block class="Magento\Cms\Block\Block" name="header.right.top">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-right-top</argument>
+                </arguments>
+            </block>
+
+            <!-- Navigation links -->
+            <block class="Magento\Cms\Block\Block" name="header.right.nav">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-right-nav</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+
+
+        <referenceContainer name="header-wrapper">
 
             <referenceBlock name="top.search" remove="true" />
             <referenceBlock name="minicart" remove="true" />
             <referenceBlock name="store.menu" remove="true" />
 
+            <referenceBlock name="catalog.compare.link" remove="true" />
+            <referenceBlock name="copyright" remove="true" />
 
-            <referenceBlock name="catalog.compare.link" remove="true"/>
-            <referenceBlock name="copyright" remove="true"/>
-
-            <block class="Magento\Cms\Block\Block" name="header.nav.right" after="logo">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">header-nav-right</argument>
-                </arguments>
-            </block>
         </referenceContainer>
 
         <referenceBlock name="footer_links" remove="true" />
